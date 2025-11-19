@@ -1,21 +1,32 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import hib from '../assets/bdh.png';
+import bsc from '../assets/bsc.webp';
+import ttt from "../assets/ttt.jpeg";
+import ac from "../assets/ac.jpeg";
+import pd from "../assets/pd.webp";
+import eg from "../assets/eg.jpg";
+
+
+
+import { Content } from "vaul";
 
 const blogPosts = [
   {
     id: 1,
     title: "History of BDSM",
     excerpt: "Explore the rich history and evolution of BDSM practices throughout human civilization.",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=800",
+    image: hib,
     date: "March 15, 2024",
-    readTime: "8 min read"
+    readTime: "8 min read",
+    Content:"bubinisnmzi"
   },
   {
     id: 2,
     title: "Safety and Consent in BDSM",
     excerpt: "Understanding the fundamental importance of safety, consent, and communication in BDSM relationships.",
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800",
+    image: bsc,
     date: "March 10, 2024",
     readTime: "12 min read"
   },
@@ -23,7 +34,7 @@ const blogPosts = [
     id: 3,
     title: "10 Tips & Tricks for BDSM",
     excerpt: "Essential tips for anyone exploring or practicing BDSM, from beginners to experienced practitioners.",
-    image: "https://images.unsplash.com/photo-1591882242598-e27e0a8e8f27?w=800",
+    image: ttt,
     date: "March 5, 2024",
     readTime: "10 min read"
   },
@@ -31,7 +42,7 @@ const blogPosts = [
     id: 4,
     title: "Understanding Power Dynamics",
     excerpt: "A deep dive into the psychological aspects of dominance and submission in BDSM relationships.",
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800",
+    image: pd,
     date: "February 28, 2024",
     readTime: "15 min read"
   },
@@ -39,7 +50,7 @@ const blogPosts = [
     id: 5,
     title: "Equipment Guide for Beginners",
     excerpt: "Everything you need to know about selecting your first BDSM equipment and accessories.",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800",
+    image: eg,
     date: "February 20, 2024",
     readTime: "7 min read"
   },
@@ -47,7 +58,7 @@ const blogPosts = [
     id: 6,
     title: "Aftercare: Why It Matters",
     excerpt: "The crucial role of aftercare in BDSM sessions and how to provide proper emotional support.",
-    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800",
+    image: ac,
     date: "February 15, 2024",
     readTime: "9 min read"
   }

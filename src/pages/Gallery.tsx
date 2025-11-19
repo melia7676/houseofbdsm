@@ -1,11 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import a from '../assets/a.jpeg';
+import b from '../assets/b.jpeg';
+import c from '../assets/c.jpeg';
+import d from '../assets/d.jpeg';
+import e from '../assets/e.jpeg';
+import f from '../assets/f.jpeg';
+import g from '../assets/g.jpeg';
+import lov from '../assets/lov.jpeg'
 
 const profiles = [
   {
     id: 1,
-    name: "Mistress Scarlett",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
+    name: "Mistress Amelia",
+    image: d,
     bio: "Experienced dominatrix specializing in psychological domination and discipline.",
     specialties: ["Discipline", "Role Play", "Sensory Play"]
   },
@@ -18,8 +26,8 @@ const profiles = [
   },
   {
     id: 3,
-    name: "Mistress Vivienne",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop",
+    name: "Mistress Rejoice",
+    image: a,
     bio: "Expert in sensory exploration and power exchange dynamics.",
     specialties: ["Sensory Deprivation", "Power Exchange", "Fetish"]
   },
@@ -33,7 +41,7 @@ const profiles = [
   {
     id: 5,
     name: "Mistress Isabella",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=500&fit=crop",
+    image: b,
     bio: "Focuses on psychological domination and lifestyle dynamics.",
     specialties: ["Lifestyle Dom", "Psychology", "Protocols"]
   },
@@ -47,7 +55,7 @@ const profiles = [
   {
     id: 7,
     name: "Mistress Raven",
-    image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=500&fit=crop",
+    image: c,
     bio: "Specializes in intense sessions and edge play.",
     specialties: ["Edge Play", "Intensity", "Experience"]
   },
@@ -60,8 +68,8 @@ const profiles = [
   },
   {
     id: 9,
-    name: "Mistress Celeste",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop",
+    name: "Mistress Debbie",
+    image: lov,
     bio: "Expert in elegance, poise, and sophisticated domination.",
     specialties: ["Elegant Dom", "Sophistication", "Refinement"]
   },
@@ -75,7 +83,7 @@ const profiles = [
   {
     id: 11,
     name: "Mistress Tempest",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=500&fit=crop",
+    image: f,
     bio: "Known for creative scenes and artistic expression.",
     specialties: ["Creative Scenes", "Artistry", "Innovation"]
   },
@@ -89,7 +97,7 @@ const profiles = [
   {
     id: 13,
     name: "Mistress Aurora",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=500&fit=crop",
+    image: g,
     bio: "Focuses on nurturing dominance and positive reinforcement.",
     specialties: ["Nurturing Dom", "Positive", "Support"]
   },

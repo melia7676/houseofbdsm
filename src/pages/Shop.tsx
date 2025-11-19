@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, X } from "lucide-react";
+import chastity from '../assets/chastity.jpeg'
+import satin from '../assets/satin.jpeg'
+import flogger from '../assets/flogger.webp'
+import paddle from '../assets/paddle.jpeg'
+import silk from '../assets/silk.jpeg'
+import leather from '../assets/leather.jpg'
+import hemp from '../assets/hemp.jpg'
+import maid from '../assets/maid.avif'
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import {
   Sheet,
@@ -23,14 +32,14 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: "Premium Leather Collar", price: 120, image: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=400", category: "Accessories", description: "Handcrafted leather collar with adjustable fit" },
-  { id: 2, name: "Luxury Flogger", price: 150, image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=400", category: "Impact Play", description: "Premium quality flogger for experienced users" },
-  { id: 3, name: "Silk Restraints Set", price: 95, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400", category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
-  { id: 4, name: "Satin Blindfold", price: 50, image: "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400", category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
-  { id: 5, name: "Hemp Rope Set", price: 75, image: "https://images.unsplash.com/photo-1591882242598-e27e0a8e8f27?w=400", category: "Bondage", description: "Professional-grade hemp rope for shibari" },
-  { id: 6, name: "Leather Ankle Cuffs", price: 110, image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400", category: "Restraints", description: "Durable leather ankle cuffs with D-rings" },
-  { id: 7, name: "Designer Harness", price: 180, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400", category: "Harnesses", description: "Fashionable leather body harness" },
-  { id: 8, name: "Paddle Set", price: 85, image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400", category: "Impact Play", description: "Three-piece paddle set for all levels" },
+  { id: 1, name: "Chastity Cage", price: 520, image: chastity, category: "Accessories", description: "Lightweight silicone chastity cage for comfortable long-term wear" },
+  { id: 2, name: "Luxury Flogger", price: 450, image: flogger, category: "Impact Play", description: "Premium quality flogger for experienced users" },
+  { id: 3, name: "Silk Restraints Set", price: 595, image: silk, category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
+  { id: 4, name: "Satin Blindfold", price: 450, image:satin , category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
+  { id: 5, name: "Hemp Rope Set", price: 475, image: hemp, category: "Bondage", description: "Professional-grade hemp rope for shibari" },
+  { id: 6, name: "Leather Ankle Cuffs", price: 510, image: leather, category: "Restraints", description: "Durable leather ankle cuffs with D-rings" },
+  { id: 7, name: "Maid Dress", price: 880, image: maid, category: "Harnesses", description: "Fashionable body harness" },
+  { id: 8, name: "Paddle Set", price: 485, image: paddle, category: "Impact Play", description: "Three-piece paddle set for all levels" },
 ];
 
 const Shop = () => {
@@ -135,7 +144,7 @@ const Shop = () => {
                     <span className="text-primary">${totalPrice}</span>
                   </div>
                   <Button className="w-full gradient-primary shadow-glow" size="lg" asChild>
-                    <a href="/checkout">Proceed to Checkout</a>
+                <Link to="/checkout">Proceed to Checkout</Link>
                   </Button>
                 </div>
               )}

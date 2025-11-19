@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TypeAnimation } from 'react-type-animation';
-import { FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import background from '../assets/bg.jpeg';
 
 const Home = () => {
   return (
@@ -10,7 +11,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1614850715649-1d0106293bd1?q=80&w=2070')] bg-cover bg-center opacity-10" />
+        <img
+        src={background}
+        alt="Community banner"
+        className="absolute w-full h-screen inset-0 bg-cover bg-center opacity-10"
+      />
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -45,13 +50,11 @@ const Home = () => {
           </div>
 
           <div className="flex justify-center gap-6">
+          
             <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
-              <FaTwitter size={24} />
+              <FaPhoneAlt size={24} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
-              <FaInstagram size={24} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
+            <a href="mailto:houseofsatisfactionbdsmcommu@gmail.com" className="text-muted-foreground hover:text-primary transition-smooth">
               <FaEnvelope size={24} />
             </a>
           </div>
