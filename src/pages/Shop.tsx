@@ -1,0 +1,190 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ShoppingCart, X } from "lucide-react";
+import { toast } from "sonner";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  description: string;
+}
+
+const products: Product[] = [
+  { id: 1, name: "Premium Leather Collar", price: 120, image: "https://images.unsplash.com/photo-1608748010899-18f300247112?w=400", category: "Accessories", description: "Handcrafted leather collar with adjustable fit" },
+  { id: 2, name: "Luxury Flogger", price: 150, image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=400", category: "Impact Play", description: "Premium quality flogger for experienced users" },
+  { id: 3, name: "Silk Restraints Set", price: 95, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400", category: "Restraints", description: "Soft silk restraints for comfortable bondage" },
+  { id: 4, name: "Satin Blindfold", price: 50, image: "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400", category: "Accessories", description: "Luxurious satin blindfold for sensory play" },
+  { id: 5, name: "Hemp Rope Set", price: 75, image: "https://images.unsplash.com/photo-1591882242598-e27e0a8e8f27?w=400", category: "Bondage", description: "Professional-grade hemp rope for shibari" },
+  { id: 6, name: "Leather Ankle Cuffs", price: 110, image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400", category: "Restraints", description: "Durable leather ankle cuffs with D-rings" },
+  { id: 7, name: "Designer Harness", price: 180, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400", category: "Harnesses", description: "Fashionable leather body harness" },
+  { id: 8, name: "Paddle Set", price: 85, image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400", category: "Impact Play", description: "Three-piece paddle set for all levels" },
+];
+
+const Shop = () => {
+  const [cart, setCart] = useState<{ product: Product; quantity: number }[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
+
+  const filteredProducts = selectedCategory === "All" 
+    ? products 
+    : products.filter(p => p.category === selectedCategory);
+
+  const addToCart = (product: Product) => {
+    const existingItem = cart.find(item => item.product.id === product.id);
+    if (existingItem) {
+      setCart(cart.map(item => 
+        item.product.id === product.id 
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ));
+    } else {
+      setCart([...cart, { product, quantity: 1 }]);
+    }
+    toast.success(`${product.name} added to cart`);
+  };
+
+  const removeFromCart = (productId: number) => {
+    setCart(cart.filter(item => item.product.id !== productId));
+    toast.info("Item removed from cart");
+  };
+
+  const updateQuantity = (productId: number, change: number) => {
+    setCart(cart.map(item => {
+      if (item.product.id === productId) {
+        const newQuantity = Math.max(1, item.quantity + change);
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    }));
+  };
+
+  const totalPrice = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+
+  return (
+    <div className="min-h-screen py-12 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-12">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Premium Shop
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Curated collection of high-quality lifestyle products
+            </p>
+          </div>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="lg" className="relative">
+                <ShoppingCart className="mr-2" />
+                Cart
+                {cart.length > 0 && (
+                  <Badge className="ml-2 gradient-primary">{cart.length}</Badge>
+                )}
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="w-full sm:max-w-lg">
+              <SheetHeader>
+                <SheetTitle>Shopping Cart</SheetTitle>
+                <SheetDescription>
+                  {cart.length === 0 ? "Your cart is empty" : `${cart.length} item(s) in cart`}
+                </SheetDescription>
+              </SheetHeader>
+              
+              <div className="mt-8 space-y-4">
+                {cart.map(item => (
+                  <Card key={item.product.id} className="p-4">
+                    <div className="flex gap-4">
+                      <img src={item.product.image} alt={item.product.name} className="w-20 h-20 object-cover rounded" />
+                      <div className="flex-1">
+                        <h3 className="font-semibold">{item.product.name}</h3>
+                        <p className="text-sm text-muted-foreground">${item.product.price}</p>
+                        <div className="flex items-center gap-2 mt-2">
+                          <Button size="sm" variant="outline" onClick={() => updateQuantity(item.product.id, -1)}>-</Button>
+                          <span>{item.quantity}</span>
+                          <Button size="sm" variant="outline" onClick={() => updateQuantity(item.product.id, 1)}>+</Button>
+                        </div>
+                      </div>
+                      <Button variant="ghost" size="sm" onClick={() => removeFromCart(item.product.id)}>
+                        <X size={20} />
+                      </Button>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {cart.length > 0 && (
+                <div className="mt-8 space-y-4">
+                  <div className="flex justify-between text-xl font-bold">
+                    <span>Total:</span>
+                    <span className="text-primary">${totalPrice}</span>
+                  </div>
+                  <Button className="w-full gradient-primary shadow-glow" size="lg" asChild>
+                    <a href="/checkout">Proceed to Checkout</a>
+                  </Button>
+                </div>
+              )}
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
+          {categories.map(category => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className={selectedCategory === category ? "gradient-primary" : ""}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {filteredProducts.map(product => (
+            <Card key={product.id} className="overflow-hidden hover:shadow-elegant transition-smooth group">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-smooth"
+                />
+                <Badge className="absolute top-4 right-4 gradient-primary">{product.category}</Badge>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-2xl font-bold text-primary">${product.price}</span>
+                  <Button onClick={() => addToCart(product)} className="gradient-primary">
+                    Add to Cart
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Shop;
