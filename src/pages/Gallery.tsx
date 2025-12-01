@@ -95,11 +95,11 @@ const profiles = [
     specialties: ["Transformation", "Growth", "Development"]
   },
   {
-    id: 13,
-    name: "Mistress Aurora",
-    image: g,
-    bio: "Focuses on nurturing dominance and positive reinforcement.",
-    specialties: ["Nurturing Dom", "Positive", "Support"]
+    id: 13
+    name: "Mistress Ladymelia Luca",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=500&fit=crop",
+    bio: "Expert in sensual domination and tease techniques.",
+    specialties: ["Pegging", "Tease", "Seduction, humiliation"]   
   },
   {
     id: 14,
@@ -115,6 +115,14 @@ const profiles = [
     bio: "Expert in sensual domination and tease techniques.",
     specialties: ["Sensual Dom", "Tease", "Seduction"]
   }
+  {
+    id: 16,
+    name: "Mistress Aurora",
+    image: g,
+    bio: "Focuses on nurturing dominance and positive reinforcement.",
+    specialties: ["Nurturing Dom", "Positive", "Support"] 
+  }
+  
 ];
 
 const Gallery = () => {
