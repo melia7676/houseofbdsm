@@ -8,6 +8,7 @@ import e from '../assets/e.jpeg';
 import f from '../assets/f.jpeg';
 import g from '../assets/g.jpeg';
 import lov from '../assets/lov.jpeg'
+import me from '../assets/me.jpeg'
 
 const profiles = [
   {
@@ -40,10 +41,10 @@ const profiles = [
   },
   {
     id: 5,
-    name: "Mistress Isabella",
-    image: b,
-    bio: "Focuses on psychological domination and lifestyle dynamics.",
-    specialties: ["Lifestyle Dom", "Psychology", "Protocols"]
+    name: "Mistress Ladymelia Luca",
+    image: me,
+    bio: "Expert in sensual domination and tease techniques.",
+    specialties: ["Pegging", "Tease", "Seduction, humiliation"]   
   },
   {
     id: 6,
@@ -96,10 +97,11 @@ const profiles = [
   },
   {
     id: 13,
-    name: "Mistress Aurora",
-    image: g,
-    bio: "Focuses on nurturing dominance and positive reinforcement.",
-    specialties: ["Nurturing Dom", "Positive", "Support"]
+    name: "Mistress Isabella",
+    image: b,
+    bio: "Focuses on psychological domination and lifestyle dynamics.",
+    specialties: ["Lifestyle Dom", "Psychology", "Protocols"]
+
   },
   {
     id: 14,
@@ -114,7 +116,14 @@ const profiles = [
     image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=500&fit=crop",
     bio: "Expert in sensual domination and tease techniques.",
     specialties: ["Sensual Dom", "Tease", "Seduction"]
-  }
+  },
+  {
+    id: 16,
+    name: "Mistress Aurora",
+    image: g,
+    bio: "Focuses on nurturing dominance and positive reinforcement.",
+    specialties: ["Nurturing Dom", "Positive", "Support"]
+  },
 ];
 
 const Gallery = () => {

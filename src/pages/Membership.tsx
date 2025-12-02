@@ -700,16 +700,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Copy, Upload } from "lucide-react";
+import { Check, Copy, Upload } from "lucide-react";
 import { FaBitcoin, FaPaypal } from "react-icons/fa";
 import { SiVenmo, SiCashapp } from "react-icons/si";
 import { toast } from "sonner";
 
 const professionals = [
   "Mistress Amelia","Master Alexander","Mistress Rejoice","Master Dominic",
-  "Mistress Issabella","Master Sterling","Mistress Raven","Master Viktor",
+  "Mistress Ladymelia","Master Sterling","Mistress Raven","Master Viktor",
   "Mistress Debbie","Master Julian","Mistress Tempest","Master Phoenix",
-  "Mistress Aurora","Master Damon","Mistress Seraphina"
+  "Mistress Aurora","Master Damon","Mistress Seraphina","Mistress Isabella"
 ];
 
 const Membership = () => {
@@ -803,6 +803,81 @@ const Membership = () => {
             <div className="text-5xl font-bold text-primary mb-4">$500</div>
             <p className="text-xl text-muted-foreground">One-time Registration Fee</p>
           </div>
+
+                  <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Membership Benefits</h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>Exclusive access to community events and gatherings</span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>Private member forums and discussion groups</span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>Educational workshops and safety training</span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>A free toy will be mailed to you after registration</span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>Access to experienced mentors and guides</span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="text-primary flex-shrink-0 mt-1" />
+                  <span>Monthly newsletter and exclusive content</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Registration Process</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Pay Registration Fee</h4>
+                    <p className="text-sm text-muted-foreground">Choose your preferred payment method below ($500)</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Receive Registration Form</h4>
+                    <p className="text-sm text-muted-foreground">We'll email you the form within 24 hours</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Complete & Submit Form</h4>
+                    <p className="text-sm text-muted-foreground">Fill out and return for verification</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center font-bold flex-shrink-0">
+                    4
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Welcome to the Community</h4>
+                    <p className="text-sm text-muted-foreground">Receive your membership credentials</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
 
           <div className="border-t border-border pt-8">
             <h3 className="text-2xl font-bold mb-8 text-center">Complete Your Registration</h3>
