@@ -709,7 +709,7 @@ const professionals = [
   "Mistress Amelia","Master Alexander","Mistress Rejoice","Master Dominic",
   "Mistress Ladymelia","Master Sterling","Mistress Raven","Master Viktor",
   "Mistress Debbie","Master Julian","Mistress Tempest","Master Phoenix",
-  "Mistress Aurora","Master Damon","Mistress Seraphina","Mistress Isabella"
+  "Mistress Aurora","Master Damon","Mistress Seraphina","Mistress Isabella","Mistress Debbie fielder"
 ];
 
 const Membership = () => {
