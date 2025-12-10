@@ -9,6 +9,7 @@ import f from '../assets/f.jpeg';
 import g from '../assets/g.jpeg';
 import lov from '../assets/lov.jpeg'
 import me from '../assets/me.jpeg'
+import df from '../assets/df.jpeg'
 
 const profiles = [
   {
@@ -97,8 +98,8 @@ const profiles = [
   },
   {
     id: 13,
-    name: "Mistress Isabella",
-    image: b,
+    name: "Mistress Debbie fielder",
+    image: df,
     bio: "Focuses on psychological domination and lifestyle dynamics.",
     specialties: ["Lifestyle Dom", "Psychology", "Protocols"]
 
@@ -123,6 +124,14 @@ const profiles = [
     image: g,
     bio: "Focuses on nurturing dominance and positive reinforcement.",
     specialties: ["Nurturing Dom", "Positive", "Support"]
+  },
+  {
+    id: 17,
+    name: "Mistress Isabella",
+    image: b,
+    bio: "Focuses on psychological domination and lifestyle dynamics.",
+    specialties: ["Lifestyle Dom", "Psychology", "Protocols"]
+
   },
 ];
 
